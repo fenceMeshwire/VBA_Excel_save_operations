@@ -15,7 +15,8 @@ If intMonth < 10 Then strMonth = "0" & CStr(intMonth) Else strMonth = CStr(intMo
 strDate = Year(dteDate) & strMonth & strDay
 strPath = ThisWorkbook.Path & "\" & strDate & "_result.xlsx"
 
-' This method works with the visible WorkSheet name
+' This method works with the visible ThisWorkbook.WorkSheets("Sheet1").name
+' Multiple WorkSheets can be copied as an array
 Worksheets(Array("Sheet1", "Sheet2", "Sheet3")).Copy
   
 With ActiveWorkbook
